@@ -31,19 +31,20 @@ import java.util.List;
 import java.util.function.Predicate;
 
 import static com.falsepattern.chunk.internal.mixin.plugin.fplib.IMixin.PredicateHelpers.always;
+import static com.falsepattern.chunk.internal.mixin.plugin.fplib.IMixin.PredicateHelpers.avoid;
 import static com.falsepattern.chunk.internal.mixin.plugin.fplib.IMixin.PredicateHelpers.require;
 
 @RequiredArgsConstructor
 public enum Mixin implements IMixin {
     // @formatter:off
-    AnvilChunkLoaderMixin(Side.COMMON, always(), "vanilla.AnvilChunkLoaderMixin"),
+    AnvilChunkLoaderMixin(Side.COMMON, avoid(TargetedMod.SPOOL), "vanilla.AnvilChunkLoaderMixin"),
     PlayerInstanceMixin(Side.COMMON, always(), "vanilla.PlayerInstanceMixin"),
     S21PacketChunkDataMixin(Side.COMMON, always(), "vanilla.S21PacketChunkDataMixin"),
     S22PacketMultiBlockChangeMixin(Side.COMMON, always(), "vanilla.S22PacketMultiBlockChangeMixin"),
     S23PacketBlockChangeMixin(Side.COMMON, always(), "vanilla.S23PacketBlockChangeMixin"),
     S26PacketMapChunkBulkMixin(Side.COMMON, always(), "vanilla.S26PacketMapChunkBulkMixin"),
 
-    ChunkMixin(Side.CLIENT, always(), "vanilla.ChunkMixin"),
+    ChunkMixin(Side.CLIENT, avoid(TargetedMod.SPOOL), "vanilla.ChunkMixin"),
     NetHandlerPlayClientMixin(Side.CLIENT, always(), "vanilla.NetHandlerPlayClientMixin"),
 
     //region Looking Glass

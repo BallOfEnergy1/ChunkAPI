@@ -32,7 +32,8 @@ import static com.falsepattern.chunk.internal.mixin.plugin.fplib.ITargetedMod.Pr
 
 @RequiredArgsConstructor
 public enum TargetedMod implements ITargetedMod {
-    LOOKINGGLASS("Looking Glass", false, contains("lookingglass-"))
+    LOOKINGGLASS("Looking Glass", false, contains("lookingglass-")),
+    SPOOL("Spool", false, contains("spool"))
     ;
 
     @Getter
